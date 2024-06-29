@@ -17,6 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <script
+        async
+        src="https://cdn.growi.io/growi.js"
+        data-growi={process.env.NEXT_PUBLIC_GROWI_ID}
+      />
       <body className={inter.className}>{children}</body>
     </html>
   );

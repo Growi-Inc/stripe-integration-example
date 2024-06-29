@@ -1,13 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import { createPaymentLink } from "./create";
+import { useAffiliateCode } from "@/lib/use-affiliate-code";
 
 const PaymentLinkExamplePage = () => {
-  const handleGoToCheckout = async () => {
-    const url = await createPaymentLink({ affiliateCode: "example" });
+  const affiliateCode = useAffiliateCode();
+
+  const handleGoToCheckout = useCallback(async () => {
+    const url = await createPaymentLink({
+      affiliateCode: affiliateCode || null,
+    });
     window.open(url);
-  };
+  }, [affiliateCode]);
 
   return (
     <div>
