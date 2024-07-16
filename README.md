@@ -16,7 +16,7 @@ The [layout](src/app/layout.tsx) contains the implementation of our tracking scr
 ...
 ```
 ### Get Affiliate Code
-The [use-affiliate-code hook](src/app/lib/use-affiliate-code.ts) contains a hook of getting the affiliate code
+The [use-affiliate-code hook](src/lib/use-affiliate-code.ts) contains a hook of getting the affiliate code
 ```ts
 import { useEffect, useState } from "react";
 
