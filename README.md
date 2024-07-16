@@ -18,7 +18,6 @@ The [layout](src/app/layout.tsx) contains the implementation of our tracking scr
 ### Get Affiliate Code
 The [use-affiliate-code hook](src/app/lib/use-affiliate-code.ts) contains a hook of getting the affiliate code
 ```ts
-...
 import { useEffect, useState } from "react";
 
 export const useAffiliateCode = () => {
@@ -45,7 +44,6 @@ export const useAffiliateCode = () => {
 
   return affiliateCode;
 };
-...
 ```
 
 ### Passing affiliate code to Stripe metadata
@@ -53,6 +51,7 @@ The [payment-link page](src/app/payment-link/page.tsx) & [create payment-link se
 ```ts
 ...
 const affiliateCode = useAffiliateCode()
+
 const paymentLink = await stripe.paymentLinks.create({
     line_items: [
       {
